@@ -14,7 +14,7 @@ export const theme = {
   transitionLength: "150ms",
   media: {
     large: "@media screen and (min-width: 1200px)",
-    medium: "@media screen and (min-width: 767px)",
+    medium: "@media screen and (min-width: 790px)",
   },
   borderRadiusLarge: "10px",
 };

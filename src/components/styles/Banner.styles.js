@@ -29,6 +29,17 @@ export const BannerStyled = styled(Section)`
 
   ${(props) => props.theme.media.medium} {
     background-image: url(${(props) => props.backgroundImages.tablet});
+    align-items: flex-start;
+    text-align: left;
+
+    h1 {
+      font-size: 3rem;
+      max-width: 400px;
+    }
+
+    p {
+      max-width: 400px;
+    }
   }
 
   ${(props) => props.theme.media.large} {

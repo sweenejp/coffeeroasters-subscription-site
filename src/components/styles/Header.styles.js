@@ -8,7 +8,10 @@ export const HeaderStyled = styled.header`
 
   #logo-header {
     width: 163px;
-    height: 18px;
+
+    ${(props) => props.theme.media.medium} {
+      width: 236px;
+    }
   }
 `;
 
@@ -20,6 +23,10 @@ export const NavIcon = styled.div`
   height: 16px;
   width: 16px;
   cursor: pointer;
+
+  ${(props) => props.theme.media.medium} {
+    display: none;
+  }
 `;
 
 export const Navigation = styled.nav`
@@ -54,6 +61,29 @@ export const Navigation = styled.nav`
 
     &:hover {
       color: ${(props) => props.theme.colors.primary};
+    }
+  }
+
+  ${(props) => props.theme.media.medium} {
+    background: none;
+    visibility: visible;
+    opacity: 1;
+    position: static;
+    height: auto;
+    padding: 0;
+
+    h2 {
+      font-size: 0.75rem;
+      font-family: "Barlow", sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.92px;
+      text-transform: uppercase;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
     }
   }
 `;

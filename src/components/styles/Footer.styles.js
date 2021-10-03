@@ -12,6 +12,12 @@ export const FooterStyled = styled.footer`
     width: 218px;
     margin-bottom: 3rem;
   }
+
+  ${(props) => props.theme.media.medium} {
+    #footer-logo {
+      width: 236px;
+    }
+  }
 `;
 
 export const FooterNav = styled.ul`
@@ -23,6 +29,14 @@ export const FooterNav = styled.ul`
   h2 {
     color: ${(props) => props.theme.colors.neutral2};
     font-size: 0.75em;
+    font-family: "Barlow", sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.92px;
+    text-transform: uppercase;
+  }
+
+  ${(props) => props.theme.media.medium} {
+    flex-direction: row;
   }
 `;
 
