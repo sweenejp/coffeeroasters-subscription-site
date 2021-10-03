@@ -1,15 +1,16 @@
 import { Container } from "../components/styles";
 import contentHome from "../data/contentHome";
-import { theme } from "../data/theme";
-import { Banner, Products } from "../components";
+import { Banner, Products, About1, About2 } from "../components";
 
 function HomePage() {
-  const { callToAction, products } = contentHome;
+  const { callToAction, products, aboutSection1, aboutSection2 } = contentHome;
 
   return (
     <Container>
-      <Banner {...theme} content={callToAction} />
-      <Products {...theme} content={products} />
+      <Banner content={callToAction} />
+      <Products content={products} />
+      <About1 content={aboutSection1} />
+      <About2 content={aboutSection2} />
     </Container>
   );
 }

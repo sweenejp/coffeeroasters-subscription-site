@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
-export const Button = styled.div`
+export const Button = styled.button`
   font-family: "Fraunces", serif;
+  border: none;
+  cursor: pointer;
   font-weight: 900;
   padding: 1em 1.9375em;
   background-color: ${(props) => props.theme.colors.primary};

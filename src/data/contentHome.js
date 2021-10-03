@@ -64,20 +64,21 @@ const contentHome = {
     aboutCards: [
       {
         heading: "Pick your coffee",
-        headingBefore: "01",
+        listNumber: "01",
         body: "Select from our evolving range of artisan coffees. Our beans are ethically sourced and we pay fair prices for them. There are new coffees in all profiles every month for you to try out.",
       },
       {
         heading: "Choose the frequency",
-        headingBefore: "02",
+        listNumber: "02",
         body: "Customize your order frequency, quantity, even your roast style and grind type. Pause, skip or cancel your subscription with no commitment through our online portal.",
       },
       {
         heading: "Receive and enjoy!",
-        headingBefore: "03",
+        listNumber: "03",
         body: "We ship your package within 48 hours, freshly roasted. Sit back and enjoy award-winning world-class coffees curated to provide a distinct tasting experience.",
       },
     ],
+    buttonText: "Create Your Plan",
   },
 };
 

@@ -16,4 +16,5 @@ export const theme = {
     large: "@media screen and (min-width: 1200px)",
     medium: "@media screen and (min-width: 767px)",
   },
+  borderRadiusLarge: "10px",
 };

@@ -1,28 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Container, HeaderStyled, HamburgerIcon, Navigation } from "./styles";
-import { metadata } from "../data/metadata";
+import { Container, HeaderStyled, NavIcon, Navigation } from "./styles";
+import { contentShared } from "../data/contentShared";
 import { useState } from "react";
 
 function Header() {
+  const content = contentShared;
   const [displayNav, setDisplayNav] = useState(false);
-  const handleClick = () => {
-    setDisplayNav(!displayNav);
-  };
 
   return (
     <Container>
       <HeaderStyled>
-        <h1 style={{ display: "none" }}>{metadata.sitetitle}</h1>
+        <h1 style={{ display: "none" }}>{content.sitetitle}</h1>
         <Link to="/" name="Home">
           <img
             id="logo-header"
-            src={metadata.logoHeader}
-            alt={metadata.sitetitle}
+            src={content.logoHeader}
+            alt={content.sitetitle}
           />
         </Link>
-        <HamburgerIcon onClick={handleClick} />
-        <Navigation display={displayNav}>
+        <NavIcon onClick={() => setDisplayNav(!displayNav)} />
+        <Navigation display={displayNav} onClick={() => setDisplayNav(false)}>
           <ul>
             <li>
               <Link to="/" name="Home">

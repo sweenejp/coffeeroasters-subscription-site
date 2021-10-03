@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { HomePage, AboutPage, PlanPage } from "./pages";
-import { Header } from "./components";
+import { Header, Footer } from "./components";
 import { GlobalStyles } from "./components/styles";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./data/theme";
@@ -16,6 +16,7 @@ function App() {
           <Route path="/about" exact component={() => <AboutPage />} />
           <Route path="/plan" exact component={() => <PlanPage />} />
         </Switch>
+        <Footer />
       </ThemeProvider>
     </Router>
   );

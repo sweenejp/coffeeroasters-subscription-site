@@ -12,7 +12,7 @@ export const HeaderStyled = styled.header`
   }
 `;
 
-export const HamburgerIcon = styled.div`
+export const NavIcon = styled.div`
   background-image: url("./images/shared/mobile/icon-hamburger.svg");
   background-repeat: no-repeat;
   background-position: center;
