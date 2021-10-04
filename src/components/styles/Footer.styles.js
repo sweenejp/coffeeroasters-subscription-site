@@ -13,7 +13,7 @@ export const FooterStyled = styled.footer`
     margin-bottom: 3rem;
   }
 
-  ${(props) => props.theme.media.medium} {
+  @media screen and (min-width: ${(props) => props.theme.media.medium}) {
     #footer-logo {
       width: 236px;
     }
@@ -35,7 +35,7 @@ export const FooterNav = styled.ul`
     text-transform: uppercase;
   }
 
-  ${(props) => props.theme.media.medium} {
+  @media screen and (min-width: ${(props) => props.theme.media.medium}) {
     flex-direction: row;
   }
 `;

@@ -9,7 +9,7 @@ export const HeaderStyled = styled.header`
   #logo-header {
     width: 163px;
 
-    ${(props) => props.theme.media.medium} {
+    @media screen and (min-width: ${(props) => props.theme.media.medium}) {
       width: 236px;
     }
   }
@@ -24,7 +24,7 @@ export const NavIcon = styled.div`
   width: 16px;
   cursor: pointer;
 
-  ${(props) => props.theme.media.medium} {
+  @media screen and (min-width: ${(props) => props.theme.media.medium}) {
     display: none;
   }
 `;
@@ -64,7 +64,7 @@ export const Navigation = styled.nav`
     }
   }
 
-  ${(props) => props.theme.media.medium} {
+  @media screen and (min-width: ${(props) => props.theme.media.medium}) {
     background: none;
     visibility: visible;
     opacity: 1;

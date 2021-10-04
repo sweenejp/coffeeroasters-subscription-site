@@ -8,7 +8,7 @@ function Banner(props) {
   return (
     <div>
       <BannerStyled backgroundImages={content.backgroundImages}>
-        <h1>{content.heading}</h1>
+        <h2>{content.heading}</h2>
         <p>{content.body}</p>
         {content.button && (
           <Link to="/plan" name="Plan">

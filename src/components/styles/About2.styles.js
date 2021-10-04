@@ -14,7 +14,7 @@ export const About2Styled = styled.section`
     margin: 6rem auto 0 auto;
   }
 
-  ${(props) => props.theme.media.medium} {
+  @media screen and (min-width: ${(props) => props.theme.media.medium}) {
     text-align: left;
 
     button {
@@ -29,20 +29,23 @@ export const About2Cards = styled.ol`
   align-items: center;
   gap: 3.5rem;
 
-  ${(props) => props.theme.media.medium} {
+  @media screen and (min-width: ${(props) => props.theme.media.medium}) {
     flex-direction: row;
     align-items: stretch;
+  }
+
+  @media screen and (min-width: ${(props) => props.theme.media.large}) {
+    gap: 6rem;
   }
 `;
 
 export const About2Card = styled.li`
   display: flex;
   flex-direction: column;
-  max-width: 327px;
+  max-width: 234px;
 
   h3 {
     color: ${(props) => props.theme.colors.secondary};
-
     margin-bottom: 1.5rem;
     order: 1;
   }
@@ -56,11 +59,10 @@ export const About2Card = styled.li`
 
   p {
     color: ${(props) => props.theme.colors.secondary};
-
-    margin: auto;
+    margin: 0 auto 0 auto;
     order: 2;
   }
-  ${(props) => props.theme.media.medium} {
+  @media screen and (min-width: ${(props) => props.theme.media.medium}) {
     h3 {
       font-size: 1.75rem;
     }

@@ -15,10 +15,6 @@ export const About1Styled = styled(Section)`
     left: 0;
     z-index: -1;
     position: absolute;
-
-    ${(props) => props.theme.media.medium} {
-      height: 640px;
-    }
   }
 
   h2,
@@ -33,18 +29,22 @@ export const About1Styled = styled(Section)`
 
   h2 {
     margin-bottom: 1.5rem;
-    ${(props) => props.theme.media.medium} {
+  }
+
+  @media screen and (min-width: ${(props) => props.theme.media.medium}) {
+    &::before {
+      height: 640px;
+    }
+
+    h2 {
       font-size: 2rem;
     }
-  }
-`;
 
-export const About1Container = styled.div`
-  max-width: 280px;
-  margin: auto;
-
-  ${(props) => props.theme.media.medium} {
-    max-width: 540px;
+    @media screen and (min-width: ${(props) => props.theme.media.large}) {
+      &::before {
+        height: 420px;
+      }
+    }
   }
 `;
 
@@ -54,6 +54,12 @@ export const About1Cards = styled.div`
   align-items: center;
   gap: 1.5rem;
   margin-top: 4rem;
+
+  @media screen and (min-width: ${(props) => props.theme.media.large}) {
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+  } ;
 `;
 
 export const About1Card = styled.div`
@@ -61,7 +67,8 @@ export const About1Card = styled.div`
   display: flex;
   flex-direction: column;
   background-color: ${(props) => props.theme.colors.primary};
-  width: 88%;
+  width: 89%;
+  max-width: 350px;
   padding: 4.5rem 0 3.25rem 0;
 
   img {
@@ -76,35 +83,44 @@ export const About1Card = styled.div`
 
   p {
     max-width: 212px;
-    margin: auto;
+    margin: 0 auto 0 auto;
   }
 
-  ${(props) => props.theme.media.medium} {
+  @media screen and (min-width: ${(props) => props.theme.media.medium}) {
     padding: 2.56rem 3rem 2.56rem 4.375rem;
     text-align: left;
-    display: grid;
+    flex-direction: row;
     align-items: center;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas:
-      "image heading"
-      "image body";
+    justify-content: center;
+    max-width: 700px;
 
     img {
-      grid-area: image;
-      margin: 0;
+      margin: 0 1rem 0 0;
     }
 
     h3 {
-      grid-area: heading;
       margin: 0;
       font-size: 1.5rem;
     }
 
     p {
-      grid-area: body;
+      max-width: 400px;
+
       margin: 0;
-      max-width: 350px;
     }
   }
+
+  @media screen and (min-width: ${(props) => props.theme.media.large}) {
+    flex-direction: column;
+    text-align: center;
+    max-width: 350px;
+
+    img {
+      margin-bottom: 3.5rem;
+    }
+
+    h3 {
+      margin-bottom: 1.5rem;
+    }
+  } ;
 `;

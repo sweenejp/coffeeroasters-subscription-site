@@ -6,10 +6,6 @@ export const ProductsStyled = styled(Section)`
   text-align: center;
   position: relative;
 
-  ${(props) => props.theme.media.medium} {
-    margin-top: 144px;
-  }
-
   h2 {
     background: -webkit-linear-gradient(
       rgba(51, 61, 75, 0.7),
@@ -22,7 +18,12 @@ export const ProductsStyled = styled(Section)`
     line-height: 180%;
     font-size: 2.4rem;
     margin-bottom: 0 auto 13px auto;
-    ${(props) => props.theme.media.medium} {
+  }
+
+  @media screen and (min-width: ${(props) => props.theme.media.medium}) {
+    margin-top: 144px;
+
+    h2 {
       font-size: 6rem;
       position: absolute;
       width: 100%;
@@ -31,57 +32,78 @@ export const ProductsStyled = styled(Section)`
       z-index: -1;
     }
   }
+  @media screen and (min-width: ${(props) => props.theme.media.large}) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 28px;
+
+    h2 {
+      font-size: 9.375rem;
+      top: -60px;
+    }
+
+    p {
+      max-width: 200px;
+    }
+  }
 `;
+
 export const Product = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 3rem;
+  margin: 0 auto 3rem auto;
+  max-width: 500px;
+
+  div {
+    display: flex;
+    flex-direction: column;
+  }
 
   h3 {
     line-height: 133%;
     font-size: 1.5rem;
-    margin-bottom: 1rem;
+    padding-bottom: 1rem;
     color: ${(props) => props.theme.colors.secondary};
   }
 
   p {
     color: ${(props) => props.theme.colors.secondary};
     max-width: 282px;
-    margin: auto;
+    margin: 0 auto 0 auto;
   }
 
   img {
     max-width: 200px;
-    margin: auto;
+    margin: 0 auto 0 auto;
     margin-bottom: 1.5rem;
   }
 
-  ${(props) => props.theme.media.medium} {
+  @media screen and (min-width: ${(props) =>
+      props.theme.media.medium}) and (max-width: ${(props) =>
+      props.theme.media.large}) {
     text-align: left;
-    display: grid;
-    align-items: center;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas:
-      "image heading"
-      "image body";
+    flex-direction: row;
+    justify-content: space-evenly;
 
     img {
-      max-width: 255px;
-      grid-area: image;
+      max-width: 256px;
       margin: 0;
       justify-self: center;
     }
 
     h3 {
-      grid-area: heading;
+      padding-top: 1rem;
       margin: 0;
     }
 
     p {
-      grid-area: body;
       margin: 0;
-      align-self: start;
+    }
+
+    @media screen and (min-width: ${(props) => props.theme.media.large}) {
+      flex-direction: row;
     }
   }
 `;

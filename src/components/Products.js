@@ -7,15 +7,17 @@ function Products(props) {
     return (
       <Product key={product.name}>
         <img src={product.image} alt={product.name} />
-        <h3>{product.name}</h3>
-        <p>{product.description}</p>
+        <div>
+          <h3>{product.name}</h3>
+          <p>{product.description}</p>
+        </div>
       </Product>
     );
   });
   return (
     <ProductsStyled>
       <h2>{content.heading}</h2>
-      <div>{productsElements}</div>
+      {productsElements}
     </ProductsStyled>
   );
 }

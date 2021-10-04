@@ -12,7 +12,7 @@ export const BannerStyled = styled(Section)`
   text-align: center;
   gap: 2em;
 
-  h1 {
+  h2 {
     color: ${(props) => props.theme.colors.neutral1};
     font-size: 2.5rem;
     line-height: 100%;
@@ -27,12 +27,12 @@ export const BannerStyled = styled(Section)`
     opacity: 0.7;
   }
 
-  ${(props) => props.theme.media.medium} {
+  @media screen and (min-width: ${(props) => props.theme.media.medium}) {
     background-image: url(${(props) => props.backgroundImages.tablet});
     align-items: flex-start;
     text-align: left;
 
-    h1 {
+    h2 {
       font-size: 3rem;
       max-width: 400px;
     }
@@ -42,7 +42,12 @@ export const BannerStyled = styled(Section)`
     }
   }
 
-  ${(props) => props.theme.media.large} {
+  @media screen and (min-width: ${(props) => props.theme.media.large}) {
     background-image: url(${(props) => props.backgroundImages.desktop});
+
+    h2 {
+      font-size: 4.5rem;
+      max-width: 600px;
+    }
   }
 `;
