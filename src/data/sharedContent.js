@@ -1,8 +1,10 @@
-export const contentShared = {
+export const sharedContent = {
   sitetitle: "Coffee Roasters",
-  logoHeader: "./images/shared/desktop/logo-header.svg",
-  logoFooter: "./images/shared/desktop/logo-footer.svg",
-  footerLiinks: [
+  logos: {
+    header: "./images/shared/desktop/logo-header.svg",
+    footer: "./images/shared/desktop/logo-footer.svg",
+  },
+  social: [
     {
       icon: "./images/shared/desktop/icon-facebook.svg",
       link: "https://www.facebook.com/",

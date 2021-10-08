@@ -1,7 +1,17 @@
 import React from "react";
+import { Article, Banner, Locations } from "../components";
 
-function AboutPage() {
-  return <div>This is the about page!</div>;
+function AboutPage({ content }) {
+  const { banner, ourCommitment, uncompromisingQuality, locations } = content;
+
+  return (
+    <>
+      <Banner content={banner} />
+      <Article content={ourCommitment} />
+      <Article content={uncompromisingQuality} />
+      <Locations content={locations} />
+    </>
+  );
 }
 
 export default AboutPage;

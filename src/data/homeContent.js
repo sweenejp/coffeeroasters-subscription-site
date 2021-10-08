@@ -1,5 +1,5 @@
-const contentHome = {
-  callToAction: {
+export const homeContent = {
+  banner: {
     heading: "Great coffee made simple.",
     body: "Start your mornings with the world's best coffees. Try our expertyly curated artisan coffees from our best roasters delivered directly to your door, at your schedule.",
     button: "Create your plan",
@@ -38,10 +38,10 @@ const contentHome = {
       },
     ],
   },
-  aboutSection1: {
+  whyChooseUs: {
     heading: "Why choose us?",
     body: "A large part of our role is choosing which particular coffees will be featured in our range. This means working closely with the best coffee growers to give you a more impactful experience on every level.",
-    aboutCards: [
+    cards: [
       {
         heading: "Best quality",
         body: "Discover an endless variety of the world's best artisan coffee from each of our roasters.",
@@ -59,9 +59,9 @@ const contentHome = {
       },
     ],
   },
-  aboutSection2: {
+  orderProcess: {
     heading: "How it works",
-    aboutCards: [
+    cards: [
       {
         heading: "Pick your coffee",
         listNumber: "01",
@@ -78,8 +78,6 @@ const contentHome = {
         body: "We ship your package within 48 hours, freshly roasted. Sit back and enjoy award-winning world-class coffees curated to provide a distinct tasting experience.",
       },
     ],
-    buttonText: "Create Your Plan",
+    button: "Create Your Plan",
   },
 };
-
-export default contentHome;

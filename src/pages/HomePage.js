@@ -1,17 +1,16 @@
-import { Container } from "../components/styles";
-import contentHome from "../data/contentHome";
-import { Banner, Products, About1, About2 } from "../components";
+import React from "react";
+import { Banner, OrderProcess, Products, WhyChooseUs } from "../components";
 
-function HomePage() {
-  const { callToAction, products, aboutSection1, aboutSection2 } = contentHome;
+function HomePage({ content }) {
+  const { banner, products, whyChooseUs, orderProcess } = content;
 
   return (
-    <Container>
-      <Banner content={callToAction} />
+    <>
+      <Banner content={banner} />
       <Products content={products} />
-      <About1 content={aboutSection1} />
-      <About2 content={aboutSection2} />
-    </Container>
+      <WhyChooseUs content={whyChooseUs} />
+      <OrderProcess content={orderProcess} />
+    </>
   );
 }
 

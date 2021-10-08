@@ -1,6 +1,10 @@
-export { default as About1 } from "./About1";
-export { default as About2 } from "./About2";
-export { default as Banner } from "./Banner";
-export { default as Footer } from "./Footer";
-export { default as Header } from "./Header";
-export { default as Products } from "./Products";
+export { GlobalStyles } from "./GlobalStyles";
+export { default as Header } from "./header/Header";
+export { default as Footer } from "./footer/Footer";
+export { default as Banner } from "./banner/Banner";
+export { default as Products } from "./products/Products";
+export { default as WhyChooseUs } from "./whyChooseUs/WhyChooseUs";
+export { default as OrderProcess } from "./orderProcess/OrderProcess";
+export { default as Article } from "./article/Article";
+export { default as Locations } from "./locations/Locations";
+export { default as OrderForm } from "./orderForm/OrderForm";

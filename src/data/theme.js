@@ -9,11 +9,11 @@ export const theme = {
     mainButtonDisabled: "#E2DEDB",
     bigSelectionOptionDefault: "#F4F1EB",
     linearGradient:
-      "linear-gradient(180deg, rgba(254, 252, 247, 0.0001) 0%, #FEFCF7 100%);",
+      "-webkit-linear-gradient(rgba(51, 61, 75, 0.7), rgba(0, 0, 0, 0) 75%)",
   },
   transitionLength: "150ms",
   media: {
-    large: "1400px",
+    large: "1300px",
     medium: "768px",
   },
   borderRadiusLarge: "10px",

@@ -1,22 +1,38 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { HomePage, AboutPage, PlanPage } from "./pages";
+import { HomePage, AboutPage, OrderPage } from "./pages";
 import { Header, Footer } from "./components";
-import { GlobalStyles } from "./components/styles";
+import { GlobalStyles } from "./components";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./data/theme";
+import { sharedContent } from "./data/sharedContent";
+import { homeContent } from "./data/homeContent";
+import { aboutContent } from "./data/aboutContent";
+import { orderContent } from "./data/orderContent";
 
 function App() {
   return (
     <Router>
       <ThemeProvider theme={theme}>
         <GlobalStyles />
-        <Header />
+        <Header content={sharedContent} />
         <Switch>
-          <Route path="/" exact component={() => <HomePage />} />
-          <Route path="/about" exact component={() => <AboutPage />} />
-          <Route path="/plan" exact component={() => <PlanPage />} />
+          <Route
+            path="/"
+            exact
+            component={() => <HomePage content={homeContent} />}
+          />
+          <Route
+            path="/about"
+            exact
+            component={() => <AboutPage content={aboutContent} />}
+          />
+          <Route
+            path="/plan"
+            exact
+            component={() => <OrderPage content={orderContent} />}
+          />
         </Switch>
-        <Footer />
+        <Footer content={sharedContent} />
       </ThemeProvider>
     </Router>
   );
