@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import FormProgress from "./FormProgress";
 import OrderSummary from "./OrderSummary";
 import OrderSummaryModal from "./OrderSummaryModal";
+import Fieldsets from "./Fieldsets";
 
 var formatter = new Intl.NumberFormat("en-US", {
   style: "currency",
@@ -28,36 +29,23 @@ function OrderForm({ content }) {
     setPrice(formatedPrice);
   };
 
-  const handleChange = (event) => {
-    const { name, id } = event.target;
-    setChoices({ ...choices, [name]: id });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
     setDisplayModal(true);
   };
 
-  const form = content.fieldsets.map((fieldset) => (
-    <fieldset key={fieldset.id}>
-      <legend>
-        <h2>{fieldset.heading}</h2>
-      </legend>
-      {fieldset.cards.map((card) => (
-        <div key={card.id}>
-          <input
-            required
-            type="radio"
-            name={fieldset.id}
-            id={card.heading}
-            onChange={handleChange}
-          />
-          <label htmlFor={card.heading}>{card.heading}</label>
-          <p>{card.description}</p>
-        </div>
-      ))}
-    </fieldset>
-  ));
+  // if capsule,
+  //   disable grind-option
+  //   "I drink my coffee **using** Capsules"
+  //   Remove the grind selection text
+  //  if "Filter" or "Espresso"
+  //   "I drink my coffee **as** Filter||Espresso"
+  //   Keep/Add the grind selection text
+
+  // for each fieldset
+  // if first fieldset, fieldset > div gets display = true
+  // else fieldset > div gets display=false
+  // fieldset > input onChange => next fieldset's div gets display = true
 
   const summaryText = (
     <p>
@@ -78,7 +66,11 @@ function OrderForm({ content }) {
           getPrice();
         }}
       >
-        {form}
+        <Fieldsets
+          content={content.fieldsets}
+          setChoices={setChoices}
+          choices={choices}
+        />
         <OrderSummary display={true}>
           <h3>{content.summary.heading}</h3>
           {summaryText}
