@@ -1,14 +1,6 @@
 import React, { useRef } from "react";
-import styled, { keyframes } from "styled-components";
-
-const fadeIn = keyframes`
-  from {
-    opacity: .3;
-  }
-  to {
-    opacity: 1;
-  }
-`;
+import styled from "styled-components";
+import { fadeIn } from "../animations";
 
 const StyledOrderSummaryModal = styled.div`
   visibility: ${({ display }) => (display ? "visible" : "hidden")};
@@ -40,8 +32,8 @@ const Background = styled.div`
 function OrderSummaryModal({ children, display, setDisplay }) {
   const backgroundRef = useRef();
 
-  const closeModal = (e) => {
-    if (backgroundRef.current === e.target) {
+  const closeModal = (event) => {
+    if (backgroundRef.current === event.target) {
       setDisplay(false);
     }
   };
