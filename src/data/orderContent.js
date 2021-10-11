@@ -32,6 +32,7 @@ export const orderContent = {
       {
         heading: "How do you drink your coffee?",
         altHeading: "Preferences",
+        id: "preference",
         cards: [
           {
             id: "capusle",
@@ -55,7 +56,8 @@ export const orderContent = {
       },
       {
         heading: "What type of coffee?",
-        altHeading: "Bean Types",
+        altHeading: "Bean Type",
+        id: "beanType",
         cards: [
           {
             id: "single-origin",
@@ -80,6 +82,7 @@ export const orderContent = {
       {
         heading: "How much would you like?",
         altHeading: "Quantity",
+        id: "quantity",
         cards: [
           {
             id: "250g",
@@ -103,7 +106,8 @@ export const orderContent = {
       },
       {
         heading: "Want us to grind them?",
-        altHeading: "Grind Options",
+        altHeading: "Grind Option",
+        id: "grindOption",
         cards: [
           {
             id: "wholebean",
@@ -122,6 +126,7 @@ export const orderContent = {
       {
         heading: "How often should we deliver?",
         altHeading: "Deliveries",
+        id: "delivery",
         cards: [
           {
             id: "every-week",
@@ -143,6 +148,23 @@ export const orderContent = {
         ],
       },
     ],
+    prices: {
+      "250g": {
+        "Every week": [7.2, 4],
+        "Every 2 weeks": [9.6, 2],
+        "Every month": [12.0, 1],
+      },
+      "500g": {
+        "Every week": [13.0, 4],
+        "Every 2 weeks": [17.5, 2],
+        "Every month": [22.0, 1],
+      },
+      "1000g": {
+        "Every week": [22.0, 4],
+        "Every 2 weeks": [32.0, 2],
+        "Every month": [42.0, 1],
+      },
+    },
     summary: {
       heading: "Order Summary",
       body: "",

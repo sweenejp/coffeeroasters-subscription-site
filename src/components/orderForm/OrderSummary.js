@@ -1,14 +1,11 @@
 import React from "react";
+import styled from "styled-components";
+const StyledOrderSummary = styled.div`
+  border: solid green 4px;
+`;
 
-function OrderSummary({ content, children }) {
-  return (
-    <div>
-      <h3>{content.heading}</h3>
-      <p>{content.body}</p>
-      <p>{content.confirm}</p>
-      {children}
-    </div>
-  );
+function OrderSummary({ children }) {
+  return <StyledOrderSummary>{children}</StyledOrderSummary>;
 }
 
 export default OrderSummary;
