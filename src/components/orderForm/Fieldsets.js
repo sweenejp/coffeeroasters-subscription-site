@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { fadeIn } from "../animations";
 
@@ -10,30 +10,20 @@ const FieldSetCards = styled.div`
 const StyledFieldSet = styled.fieldset``;
 
 function Fieldsets({ content, choices, setChoices }) {
-  let intialDisplays = [true, false, false, false, false];
-
-  const [displayFieldsets, setDisplayFieldsets] = useState(intialDisplays);
-
+  const [fieldsets, setFieldsets] = useState(content);
   const handleChange = (event) => {
     const { name, id } = event.target;
     setChoices({ ...choices, [name]: id });
-
-    const index = Number(event.target.dataset.index);
-    console.log(index);
-    let newDisplayFieldsets = displayFieldsets;
-    newDisplayFieldsets[index + 1] = true;
-    setDisplayFieldsets(newDisplayFieldsets);
-    console.log(displayFieldsets);
   };
 
-  const fieldsets = content.map((fieldset, index) => (
+  const fieldsetsElements = fieldsets.map((fieldset, index) => (
     <StyledFieldSet key={fieldset.id}>
       <legend>
         <h2>{fieldset.heading}</h2>
       </legend>
-      <FieldSetCards display={displayFieldsets[index]}>
+      <FieldSetCards>
         {fieldset.cards.map((card) => (
-          <div key={card.id}>
+          <div key={card.id} display={content.display}>
             <input
               required
               type="radio"
@@ -49,7 +39,7 @@ function Fieldsets({ content, choices, setChoices }) {
       </FieldSetCards>
     </StyledFieldSet>
   ));
-  return <>{fieldsets}</>;
+  return <>{fieldsetsElements}</>;
 }
 
 export default Fieldsets;

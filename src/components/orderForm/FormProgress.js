@@ -1,10 +1,26 @@
 import React from "react";
+import styled from "styled-components";
 
-function FormProgress({ content }) {
-  const altHeadings = content.map((item) => (
-    <h4 key={item.altHeading}>{item.altHeading}</h4>
-  ));
-  return <>{altHeadings}</>;
+const StyledFormProgressItem = styled.h4`
+  a {
+    color: black;
+    color: ${({ crossOff }) => (crossOff ? "red" : "green")};
+  }
+`;
+
+function FormProgress({ content, choices }) {
+  return (
+    <>
+      {content.map((fieldset) => (
+        <StyledFormProgressItem
+          key={fieldset.id}
+          crossOff={choices[fieldset.id] === "_____" ? false : true}
+        >
+          <a href={`#${fieldset.id}`}>{fieldset.altHeading}</a>
+        </StyledFormProgressItem>
+      ))}
+    </>
+  );
 }
 
 export default FormProgress;

@@ -7,6 +7,10 @@ export const GlobalStyles = createGlobalStyle`
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: ${({ theme }) => theme.colors.neutral1};
 }
