@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const StyledOrderProcess = styled.section`
   text-align: center;
-  background-color: ${({ theme, isDark }) =>
-    isDark ? theme.colors.primary2 : theme.colors.neutral1};
+  background-color: ${({ theme, dark }) =>
+    dark ? theme.colors.primary2 : theme.colors.neutral1};
   border-radius: ${({ theme }) => theme.borderRadius.large};
   padding: 5rem 1.5rem;
 
@@ -50,8 +50,8 @@ export const OrderProcessCard = styled.li`
   position: relative;
 
   h3 {
-    color: ${({ theme, isDark }) =>
-      isDark ? theme.colors.neutral1 : theme.colors.primary2};
+    color: ${({ theme, dark }) =>
+      dark ? theme.colors.neutral1 : theme.colors.primary2};
     font-size: 1.75rem;
     margin-bottom: 1.5rem;
     order: 1;
@@ -65,8 +65,8 @@ export const OrderProcessCard = styled.li`
   }
 
   p {
-    color: ${({ theme, isDark }) =>
-      isDark ? theme.colors.neutral1 : theme.colors.primary2};
+    color: ${({ theme, dark }) =>
+      dark ? theme.colors.neutral1 : theme.colors.primary2};
     margin: 0 auto 0 auto;
     order: 2;
   }

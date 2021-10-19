@@ -8,7 +8,7 @@ function AboutPage({ content }) {
     <>
       <Banner content={banner} />
       <Article content={ourCommitment} />
-      <Article content={uncompromisingQuality} />
+      <Article dark content={uncompromisingQuality} />
       <Locations content={locations} />
     </>
   );

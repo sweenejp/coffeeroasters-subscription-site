@@ -1,24 +1,28 @@
 import React from "react";
+import { Container } from "../sharedStyledComponents";
+import { LocationCards, LocationCard, StyledLocations } from "./styles";
 
 function Locations({ content }) {
-  const locationCards = content.locationCards.map((card) => {
+  const cards = content.locationCards.map((card) => {
     return (
-      <div>
+      <LocationCard>
         <img src={card.image} alt="" />
         <h3>{card.heading}</h3>
         <p>{card.address.line1}</p>
         <p>{card.address.line2}</p>
         <p>{card.address.line3}</p>
         <p>{card.address.phoneNumber}</p>
-      </div>
+      </LocationCard>
     );
   });
 
   return (
-    <section>
-      <h2>{content.heading}</h2>
-      <div>{locationCards}</div>
-    </section>
+    <Container>
+      <StyledLocations>
+        <h2>{content.heading}</h2>
+        <LocationCards>{cards}</LocationCards>
+      </StyledLocations>
+    </Container>
   );
 }
 

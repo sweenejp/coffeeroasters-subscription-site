@@ -9,10 +9,10 @@ import {
 import Button from "../button/Button";
 import { Container } from "../sharedStyledComponents";
 
-function OrderProcess({ content, isDark }) {
+function OrderProcess({ content, dark }) {
   const cards = content.cards.map((card) => {
     return (
-      <OrderProcessCard isDark={isDark} key={card.heading}>
+      <OrderProcessCard dark={dark} key={card.heading}>
         <h3>{card.heading}</h3>
         <h4>{card.listNumber}</h4>
         <p>{card.body}</p>
@@ -22,7 +22,7 @@ function OrderProcess({ content, isDark }) {
   console.log(content.button);
 
   return (
-    <StyledOrderProcess isDark={isDark}>
+    <StyledOrderProcess dark={dark}>
       {content.heading && <h2>{content.heading}</h2>}
       <StyledHR />
       <OrderProcessCards>{cards}</OrderProcessCards>

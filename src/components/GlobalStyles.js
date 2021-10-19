@@ -42,7 +42,7 @@ img {
   max-width: 100%;
 }
 
-section {
+section, article {
   margin-bottom: 7.5rem;
 
   @media screen and (min-width: ${({ theme }) => theme.media.medium}) {
