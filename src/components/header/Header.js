@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { NavIcon } from "./NavIcon";
-import { Navigation } from "./Navigation";
-import { Logo } from "../Logo";
+import { Navigation, NavIcon } from "./styles";
+import { Container, Logo } from "../sharedStyledComponents";
 
 const HeaderStyled = styled.header`
   position: relative;
@@ -16,32 +15,34 @@ function Header({ content }) {
   const [displayNav, setDisplayNav] = useState(false);
 
   return (
-    <HeaderStyled>
-      <h1 style={{ display: "none" }}>{content.sitetitle}</h1>
-      <Link to="/" name="Home">
-        <Logo src={content.logos.header} alt={content.sitetitle} />
-      </Link>
-      <NavIcon onClick={() => setDisplayNav(!displayNav)} />
-      <Navigation display={displayNav} onClick={() => setDisplayNav(false)}>
-        <ul>
-          <li>
-            <Link to="/" name="Home">
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link to="/about" name="About">
-              About Us
-            </Link>
-          </li>
-          <li>
-            <Link to="/plan" name="Plan">
-              Create Your Plan
-            </Link>
-          </li>
-        </ul>
-      </Navigation>
-    </HeaderStyled>
+    <Container>
+      <HeaderStyled>
+        <h1 style={{ display: "none" }}>{content.sitetitle}</h1>
+        <Link to="/" name="Home">
+          <Logo src={content.logos.header} alt={content.sitetitle} />
+        </Link>
+        <NavIcon onClick={() => setDisplayNav(!displayNav)} />
+        <Navigation display={displayNav} onClick={() => setDisplayNav(false)}>
+          <ul>
+            <li>
+              <Link to="/" name="Home">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link to="/about" name="About">
+                About Us
+              </Link>
+            </li>
+            <li>
+              <Link to="/plan" name="Plan">
+                Create Your Plan
+              </Link>
+            </li>
+          </ul>
+        </Navigation>
+      </HeaderStyled>
+    </Container>
   );
 }
 

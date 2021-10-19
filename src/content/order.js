@@ -3,9 +3,9 @@ export const orderContent = {
     heading: "Create a plan",
     body: "Build a subscription plan that best fits your needs. We offer an assortment of the best artisan coffees from around the globe delivered fresh to your door.",
     backgroundImages: {
-      desktop: "./images/plan/desktop/image-hero-blackcup.svg",
-      tablet: "./images/plan/tablet/image-hero-blackcup.svg",
-      mobile: "./images/plan/mobile/image-hero-blackcup.svg",
+      desktop: "./images/plan/desktop/image-hero-blackcup.jpg",
+      tablet: "./images/plan/tablet/image-hero-blackcup.jpg",
+      mobile: "./images/plan/mobile/image-hero-blackcup.jpg",
     },
   },
   orderProcess: {

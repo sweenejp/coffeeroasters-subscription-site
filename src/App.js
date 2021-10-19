@@ -3,11 +3,11 @@ import { HomePage, AboutPage, OrderPage } from "./pages";
 import { Header, Footer } from "./components";
 import { GlobalStyles } from "./components";
 import { ThemeProvider } from "styled-components";
-import { theme } from "./data/theme";
-import { sharedContent } from "./data/sharedContent";
-import { homeContent } from "./data/homeContent";
-import { aboutContent } from "./data/aboutContent";
-import { orderContent } from "./data/orderContent";
+import { theme } from "./theme";
+import { sharedContent } from "./content/shared";
+import { homeContent } from "./content/home";
+import { aboutContent } from "./content/about";
+import { orderContent } from "./content/order";
 
 function App() {
   return (

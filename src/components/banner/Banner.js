@@ -1,17 +1,20 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Container } from "../sharedStyledComponents";
+import { StyledBanner } from "./styles";
 
-function Banner({ content }) {
+function Banner({ content, children }) {
+  console.log(content.backgroundImages.mobile);
+
   return (
-    <section>
-      <h2>{content.heading}</h2>
-      <p>{content.body}</p>
-      {content.button && (
-        <Link to="/plan" name="Plan">
-          <button>{content.button}</button>
-        </Link>
-      )}
-    </section>
+    <Container>
+      <StyledBanner backgroundImages={content.backgroundImages}>
+        <div>
+          <h2>{content.heading}</h2>
+          <p>{content.body}</p>
+          {children}
+        </div>
+      </StyledBanner>
+    </Container>
   );
 }
 

@@ -8,3 +8,4 @@ export { default as OrderProcess } from "./orderProcess/OrderProcess";
 export { default as Article } from "./article/Article";
 export { default as Locations } from "./locations/Locations";
 export { default as OrderForm } from "./orderForm/OrderForm";
+export { default as Button } from "./button/Button";

@@ -7,7 +7,7 @@ function OrderPage({ content }) {
   return (
     <>
       <Banner content={banner} />
-      <OrderProcess content={orderProcess} />
+      <OrderProcess isDark content={orderProcess} />
       <OrderForm content={orderForm} />
     </>
   );

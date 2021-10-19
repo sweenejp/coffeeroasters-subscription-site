@@ -1,11 +1,11 @@
 export const theme = {
   colors: {
-    primary: "#0E8784",
-    secondary: "#333D4B",
-    tertiary: "#FDD6BA",
+    primary1: "#0E8784",
+    primary2: "#333D4B",
+    primary3: "#FDD6BA",
+    primary4: "#66D2CF",
     neutral1: "#FEFCF7",
     neutral2: "#83888F",
-    primaryHover: "#66D2CF",
     mainButtonDisabled: "#E2DEDB",
     bigSelectionOptionDefault: "#F4F1EB",
     linearGradient:
@@ -16,5 +16,8 @@ export const theme = {
     large: "1300px",
     medium: "768px",
   },
-  borderRadiusLarge: "10px",
+  borderRadius: {
+    large: "10px",
+    small: "5px",
+  },
 };

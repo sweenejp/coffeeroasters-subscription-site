@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import styled from "styled-components";
-import { fadeIn } from "../animations";
+import { fadeIn } from "../styledVariables";
 
 const StyledOrderSummaryModal = styled.div`
   visibility: ${({ display }) => (display ? "visible" : "hidden")};

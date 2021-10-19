@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import { hoverToPrimary } from "../hovers";
-import { fontHeavy, fontLight } from "../fonts";
+import { hoverToPrimary1, fontHeavy, fontLight } from "../styledVariables";
 
 export const Navigation = styled.nav`
   ${fontHeavy}
@@ -29,8 +28,8 @@ export const Navigation = styled.nav`
 
   a {
     font-size: 1.5rem;
-    color: ${({ theme }) => theme.colors.secondary};
-    ${hoverToPrimary}
+    color: ${({ theme }) => theme.colors.primary2};
+    ${hoverToPrimary1}
   }
 
   @media screen and (min-width: ${({ theme }) => theme.media.medium}) {
@@ -55,5 +54,19 @@ export const Navigation = styled.nav`
       justify-content: flex-end;
       gap: 3em;
     }
+  }
+`;
+
+export const NavIcon = styled.div`
+  background-image: url("./images/shared/mobile/icon-hamburger.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 16px;
+  width: 16px;
+  cursor: pointer;
+
+  @media screen and (min-width: ${({ theme }) => theme.media.medium}) {
+    display: none;
   }
 `;

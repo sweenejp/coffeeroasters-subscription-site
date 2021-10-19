@@ -1,28 +1,37 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {
+  StyledOrderProcess,
+  OrderProcessCards,
+  OrderProcessCard,
+  StyledHR,
+} from "./styles";
+import Button from "../button/Button";
+import { Container } from "../sharedStyledComponents";
 
-function OrderProcess({ content }) {
-  const orderProcessCards = content.cards.map((card) => {
+function OrderProcess({ content, isDark }) {
+  const cards = content.cards.map((card) => {
     return (
-      <div key={card.heading}>
+      <OrderProcessCard isDark={isDark} key={card.heading}>
         <h3>{card.heading}</h3>
         <h4>{card.listNumber}</h4>
         <p>{card.body}</p>
-      </div>
+      </OrderProcessCard>
     );
   });
+  console.log(content.button);
 
   return (
-    <section>
+    <StyledOrderProcess isDark={isDark}>
       {content.heading && <h2>{content.heading}</h2>}
-      <hr />
-      <div>{orderProcessCards}</div>
+      <StyledHR />
+      <OrderProcessCards>{cards}</OrderProcessCards>
       {content.button && (
         <Link to="/plan" name="Plan">
-          <button>{content.button}</button>
+          <Button>{content.button}</Button>
         </Link>
       )}
-    </section>
+    </StyledOrderProcess>
   );
 }
 

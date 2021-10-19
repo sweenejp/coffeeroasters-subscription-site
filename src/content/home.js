@@ -1,7 +1,7 @@
 export const homeContent = {
   banner: {
     heading: "Great coffee made simple.",
-    body: "Start your mornings with the world's best coffees. Try our expertyly curated artisan coffees from our best roasters delivered directly to your door, at your schedule.",
+    body: "Start your mornings with the world's best coffees. Try our expertly curated artisan coffees from our best roasters delivered directly to your door, at your schedule.",
     button: "Create your plan",
     backgroundImages: {
       desktop: "./images/home/desktop/image-hero-coffeepress.jpg",
