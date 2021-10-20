@@ -1,11 +1,14 @@
 import React from "react";
-import styled from "styled-components";
-const StyledOrderSummary = styled.div`
-  border: solid green 4px;
-`;
+import { StyledOrderSummary } from "./styles";
+import SummaryText from "./SummaryText";
 
-function OrderSummary({ children }) {
-  return <StyledOrderSummary>{children}</StyledOrderSummary>;
+function OrderSummary({ content, userInput }) {
+  return (
+    <StyledOrderSummary>
+      <h2>{content.heading}</h2>
+      <SummaryText userInput={userInput} />
+    </StyledOrderSummary>
+  );
 }
 
 export default OrderSummary;

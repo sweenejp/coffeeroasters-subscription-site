@@ -1,25 +1,26 @@
 import React from "react";
-import styled from "styled-components";
+import { FormProgressItem, StyledFormProgress } from "./styles";
 
-const StyledFormProgressItem = styled.h4`
-  a {
-    color: black;
-    color: ${({ crossOff }) => (crossOff ? "red" : "green")};
+function FormProgress({ content, userInput, grindOptionDisabled }) {
+  let updatedContent = content;
+  if (grindOptionDisabled) {
+    updatedContent = updatedContent.filter(
+      (fieldset) => fieldset.id !== "grindOption"
+    );
   }
-`;
-
-function FormProgress({ content, choices }) {
   return (
-    <>
-      {content.map((fieldset) => (
-        <StyledFormProgressItem
+    <StyledFormProgress>
+      {updatedContent.map((fieldset, index) => (
+        <FormProgressItem
           key={fieldset.id}
-          crossOff={choices[fieldset.id] === "_____" ? false : true}
+          greyOut={userInput[fieldset.id] ? false : true}
         >
-          <a href={`#${fieldset.id}`}>{fieldset.altHeading}</a>
-        </StyledFormProgressItem>
+          <span>{`0${index + 1}`}</span> {fieldset.altHeading}
+          {": "}
+          <span>{userInput[fieldset.id] || "_____"}</span>
+        </FormProgressItem>
       ))}
-    </>
+    </StyledFormProgress>
   );
 }
 

@@ -7,7 +7,6 @@ import {
   StyledHR,
 } from "./styles";
 import Button from "../button/Button";
-import { Container } from "../sharedStyledComponents";
 
 function OrderProcess({ content, dark }) {
   const cards = content.cards.map((card) => {
@@ -19,7 +18,6 @@ function OrderProcess({ content, dark }) {
       </OrderProcessCard>
     );
   });
-  console.log(content.button);
 
   return (
     <StyledOrderProcess dark={dark}>

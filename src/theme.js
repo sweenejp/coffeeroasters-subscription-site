@@ -6,7 +6,7 @@ export const theme = {
     primary4: "#66D2CF",
     neutral1: "#FEFCF7",
     neutral2: "#83888F",
-    mainButtonDisabled: "#E2DEDB",
+    buttonDisabled: "#E2DEDB",
     bigSelectionOptionDefault: "#F4F1EB",
     linearGradient:
       "-webkit-linear-gradient(rgba(51, 61, 75, 0.7), rgba(0, 0, 0, 0) 75%)",

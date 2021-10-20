@@ -35,19 +35,16 @@ export const orderContent = {
         id: "preference",
         cards: [
           {
-            id: "capusle",
             heading: "Capsule",
             description:
               "Compatible with Nespresso systems and similar brewers",
           },
           {
-            id: "filter",
-            heading: "Filter",
+            heading: "Filtered",
             description:
               "For pour over or drip methods like Aeropress, Chemex, and V60",
           },
           {
-            id: "espresso",
             heading: "Espresso",
             description:
               "Dense and finely ground beans for an intense, flavorful experience",
@@ -60,19 +57,16 @@ export const orderContent = {
         id: "beanType",
         cards: [
           {
-            id: "single-origin",
             heading: "Single Origin",
             description:
               "Distinct, high quality coffee from a specific family-owned farm",
           },
           {
-            id: "decaf",
             heading: "Decaf",
             description:
               "Just like regular coffee, except the caffeine has been removed",
           },
           {
-            id: "blended",
             heading: "Blended",
             description:
               "Combination of two or three dark roasted beans of organic coffees",
@@ -85,19 +79,16 @@ export const orderContent = {
         id: "quantity",
         cards: [
           {
-            id: "250g",
             heading: "250g",
             description:
               "Perfect for the solo drinker. Yields about 12 delicious cups",
           },
           {
-            id: "500g",
             heading: "500g",
             description:
               "Perfect option for a couple. Yields about 40 delectable cups.",
           },
           {
-            id: "1000g",
             heading: "1000g",
             description:
               "Perfect for offices and events. Yields about 90 delightful cups.",
@@ -110,16 +101,19 @@ export const orderContent = {
         id: "grindOption",
         cards: [
           {
-            id: "wholebean",
             heading: "Wholebean",
             description:
               "Best choice if you cherish the full sensory experience",
           },
           {
-            id: "filter",
             heading: "Filter",
             description:
               "For drip or pour-over coffee methods such as V60 or Aeropress",
+          },
+          {
+            heading: "Cafetiere",
+            description:
+              "Course ground beans specially suited for french press coffee",
           },
         ],
       },
@@ -129,17 +123,14 @@ export const orderContent = {
         id: "delivery",
         cards: [
           {
-            id: "every-week",
             heading: "Every week",
             description: "per shipment. Includes free first-class shipping.",
           },
           {
-            id: "every-2-weeks",
             heading: "Every 2 weeks",
             description: "per shipment. Includes free priority shipping.",
           },
           {
-            id: "every-month",
             heading: "Every month",
             description: "per shipment. Includes free priority shipping.",
           },

@@ -1,82 +1,102 @@
+import React, { useEffect } from "react";
 import {
   AccordionButton,
   AccordionItem,
   AccordionPanel,
 } from "@reach/accordion";
-import React, { useEffect } from "react";
-import styled from "styled-components";
-
-const FieldsetCards = styled.div``;
-
-const StyledFieldSet = styled.fieldset``;
-
-const StyledLegend = styled.legend``;
+import { FaAngleDown } from "react-icons/fa";
+import { FieldsetCards, FieldsetCard, StyledFieldSet, Legend } from "./styles";
 
 function Fieldset({
-  content,
-  choices,
-  setChoices,
+  index,
+  fieldset,
+  userInput,
+  setUserInput,
   prices,
   priceFormatter,
-  grindOption,
-  setGrindOption,
+  grindOptionDisabled,
+  setGrindOptionDisabled,
   accordianIndices,
   setAccordianIndicies,
 }) {
   const handleChange = (event) => {
     const { name, id } = event.target;
-    setChoices({ ...choices, [name]: id });
+    setUserInput({ ...userInput, [name]: id });
+
+    const currentIndex = Number(event.target.dataset.fieldsetindex);
+    openNextAccordianPanel(currentIndex);
+  };
+
+  const openNextAccordianPanel = (currentIndex) => {
+    let newaccordianIndices = [];
+    if (grindOptionDisabled && currentIndex === 2) {
+      newaccordianIndices = [...accordianIndices, currentIndex + 2];
+    } else {
+      newaccordianIndices = [...accordianIndices, currentIndex + 1];
+    }
+    setAccordianIndicies(newaccordianIndices);
   };
 
   const getPricePerShipment = (card) => {
-    const quantity = choices.quantity;
+    const quantity = userInput.quantity;
     const delivery = card.heading;
-    if (quantity === "_____") {
+    if (!quantity) {
       return "______";
     }
-    return priceFormatter.format(prices[quantity][delivery][0]);
+    const pricePerShipment = priceFormatter.format(
+      prices[quantity][delivery][0]
+    );
+    return pricePerShipment;
   };
 
   useEffect(() => {
-    if (choices.preference === "Capsule") {
-      setGrindOption({ disabled: true, required: false });
+    if (userInput.preference === "Capsule") {
+      setGrindOptionDisabled(true);
       let newaccordianIndices = accordianIndices.filter((num) => num !== 3);
       setAccordianIndicies(newaccordianIndices);
     } else {
-      setGrindOption({ disabled: false, required: true });
+      setGrindOptionDisabled(false);
     }
-  }, [choices]);
+  }, [userInput]);
+
+  const cards = fieldset.cards.map((card) => (
+    <FieldsetCard
+      fieldset={fieldset.id}
+      key={card.heading}
+      cardName={card.heading}
+      userInput={userInput}
+    >
+      <input
+        type="radio"
+        name={fieldset.id}
+        id={card.heading}
+        onChange={handleChange}
+        data-fieldsetindex={index}
+      />
+      <label htmlFor={card.heading}>
+        <h3>{card.heading}</h3>
+        <p>
+          {fieldset.id === "delivery"
+            ? getPricePerShipment(card) + " " + card.description
+            : card.description}{" "}
+        </p>
+      </label>
+    </FieldsetCard>
+  ));
 
   return (
     <AccordionItem
-      disabled={content.id === "grindOption" ? grindOption.disabled : false}
+      disabled={fieldset.id === "grindOption" ? grindOptionDisabled : false}
     >
-      <StyledFieldSet id={content.id}>
+      <StyledFieldSet>
         <AccordionButton>
-          <StyledLegend>{content.heading}</StyledLegend>
+          <Legend index={index} accordianIndices={accordianIndices}>
+            {fieldset.heading}
+            <FaAngleDown />
+          </Legend>
         </AccordionButton>
         <AccordionPanel>
-          <FieldsetCards>
-            {content.cards.map((card) => (
-              <div key={card.id}>
-                <input
-                  required={
-                    content.id === "grindOption" ? grindOption.required : true
-                  }
-                  type="radio"
-                  name={content.id}
-                  id={card.heading}
-                  onChange={handleChange}
-                />
-                <label htmlFor={card.heading}>{card.heading}</label>
-                <p>
-                  {content.id === "delivery"
-                    ? getPricePerShipment(card) + " " + card.description
-                    : card.description}{" "}
-                </p>
-              </div>
-            ))}
-          </FieldsetCards>
+          <FieldsetCards>{cards}</FieldsetCards>
         </AccordionPanel>
       </StyledFieldSet>
     </AccordionItem>

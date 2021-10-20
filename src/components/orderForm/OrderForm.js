@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react";
 import FormProgress from "./FormProgress";
 import OrderSummary from "./OrderSummary";
 import OrderSummaryModal from "./OrderSummaryModal";
-import SummaryText from "./SummaryText";
 import Fieldset from "./Fieldset";
 import { Accordion } from "@reach/accordion";
+import { Container } from "../sharedStyledComponents";
+import { StyledOrderForm, FormProgressContainer } from "./styles";
+import Button from "../button/Button";
 
 const priceFormatter = new Intl.NumberFormat("en-US", {
   style: "currency",
@@ -12,20 +14,18 @@ const priceFormatter = new Intl.NumberFormat("en-US", {
 });
 
 function OrderForm({ content }) {
-  const [choices, setChoices] = useState({
-    preference: "_____",
-    beanType: "_____",
-    quantity: "_____",
-    grindOption: "_____",
-    delivery: "_____",
+  const [userInput, setUserInput] = useState({
+    preference: null,
+    beanType: null,
+    quantity: null,
+    grindOption: null,
+    delivery: null,
   });
   const [displayModal, setDisplayModal] = useState(false);
   const [price, setPrice] = useState(0);
-  const [grindOption, setGrindOption] = useState({
-    disabled: false,
-    required: true,
-  });
+  const [grindOptionDisabled, setGrindOptionDisabled] = useState(false);
   const [accordianIndices, setAccordianIndicies] = useState([0]);
+  const [formComplete, setFormComplete] = useState(false);
 
   const toggleItem = (toggledIndex) => {
     if (accordianIndices.includes(toggledIndex)) {
@@ -38,11 +38,9 @@ function OrderForm({ content }) {
   };
 
   const getPrice = () => {
-    const { quantity, delivery } = choices;
-    const price =
-      content.prices[quantity][delivery][0] *
-      content.prices[quantity][delivery][1];
-    setPrice(priceFormatter.format(price));
+    const { quantity, delivery } = userInput;
+    const [pricePerDelivery, deliveries] = content.prices[quantity][delivery];
+    setPrice(priceFormatter.format(pricePerDelivery * deliveries));
   };
 
   const handleSubmit = (event) => {
@@ -50,49 +48,80 @@ function OrderForm({ content }) {
     setDisplayModal(true);
   };
 
+  useEffect(() => {
+    if (grindOptionDisabled) {
+      if (
+        userInput.preference &&
+        userInput.beanType &&
+        userInput.quantity &&
+        userInput.delivery
+      ) {
+        setFormComplete(true);
+      }
+    } else {
+      if (
+        userInput.preference &&
+        userInput.beanType &&
+        userInput.quantity &&
+        userInput.grindOption &&
+        userInput.delivery
+      ) {
+        setFormComplete(true);
+      }
+    }
+  }, [userInput]);
+
   return (
-    <>
-      <FormProgress content={content.fieldsets} choices={choices} />
+    <Container>
+      <StyledOrderForm>
+        <FormProgressContainer>
+          <FormProgress
+            content={content.fieldsets}
+            userInput={userInput}
+            grindOptionDisabled={grindOptionDisabled}
+          />
+        </FormProgressContainer>
 
-      <form
-        onSubmit={(event) => {
-          handleSubmit(event);
-          getPrice();
-        }}
-      >
-        <Accordion index={accordianIndices} onChange={toggleItem}>
-          {content.fieldsets.map((fieldset) => (
-            <Fieldset
-              key={fieldset.id}
-              content={fieldset}
-              prices={content.prices}
-              priceFormatter={priceFormatter}
-              choices={choices}
-              grindOption={grindOption}
-              setGrindOption={setGrindOption}
-              setChoices={setChoices}
-              accordianIndices={accordianIndices}
-              setAccordianIndicies={setAccordianIndicies}
-            />
-          ))}
-        </Accordion>
+        <form
+          onSubmit={(event) => {
+            handleSubmit(event);
+            getPrice();
+          }}
+        >
+          <Accordion index={accordianIndices} onChange={toggleItem}>
+            {content.fieldsets.map((fieldset, index) => (
+              <Fieldset
+                key={fieldset.id}
+                index={index}
+                fieldset={fieldset}
+                prices={content.prices}
+                priceFormatter={priceFormatter}
+                userInput={userInput}
+                setUserInput={setUserInput}
+                grindOptionDisabled={grindOptionDisabled}
+                setGrindOptionDisabled={setGrindOptionDisabled}
+                accordianIndices={accordianIndices}
+                setAccordianIndicies={setAccordianIndicies}
+              />
+            ))}
+          </Accordion>
 
-        <OrderSummary display={true}>
-          <h3>{content.summary.heading}</h3>
-          <SummaryText choices={choices} />
-          <p>{content.summary.confirm}</p>
-        </OrderSummary>
+          <OrderSummary content={content.summary} userInput={userInput} />
 
-        <button type="submit">{content.buttons.first}</button>
+          <Button type="submit" disabled={!formComplete}>
+            {content.buttons.first}
+          </Button>
 
-        <OrderSummaryModal display={displayModal} setDisplay={setDisplayModal}>
-          <h3>{content.summary.heading}</h3>
-          <SummaryText choices={choices} />
-          <p>{content.summary.confirm}</p>
-          <button type="button">Checkout - {price} / mo</button>
-        </OrderSummaryModal>
-      </form>
-    </>
+          <OrderSummaryModal
+            display={displayModal}
+            setDisplay={setDisplayModal}
+            content={content.summary}
+            userInput={userInput}
+            price={price}
+          />
+        </form>
+      </StyledOrderForm>
+    </Container>
   );
 }
 

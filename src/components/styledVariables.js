@@ -33,3 +33,16 @@ export const fadeIn = keyframes`
     opacity: 1;
   }
 `;
+
+export const slideDown = keyframes`
+  0% {
+  -webkit-transform: translateY(-60px);
+  transform: translateY(-60px);
+  opacity: .2;
+  }
+  100% {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  opacity: 1;
+  }
+`;

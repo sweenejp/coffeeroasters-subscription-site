@@ -1,22 +1,27 @@
 import React from "react";
 
-function SummaryText({ choices }) {
-  const { preference, beanType, quantity, grindOption, delivery } = choices;
+function SummaryText({ userInput }) {
+  let { preference, beanType, quantity, grindOption, delivery } = userInput;
 
   if (preference === "Capsule") {
     return (
       <p>
-        I drink my coffee using <span>{preference}</span> with a{" "}
-        <span>{beanType}</span> type of bean. <span>{quantity}</span>, sent to
-        me <span>{delivery}</span>
+        &quot;I drink my coffee using <span>{preference || "_____"}</span> with
+        a <span>{beanType || "_____"}</span> type of bean.{" "}
+        <span>{quantity || "_____"}</span>, sent to me{" "}
+        <span>{delivery || "_____"}</span>
+        &quot;
       </p>
     );
   } else {
     return (
       <p>
-        I drink my coffee using <span>{preference}</span> with a{" "}
-        <span>{beanType}</span> type of bean. <span>{quantity}</span> ground ala{" "}
-        <span>{grindOption}</span>, sent to me <span>{delivery}</span>
+        &quot;I drink my coffee using <span>{preference || "_____"}</span> with
+        a <span>{beanType || "_____"}</span> type of bean.{" "}
+        <span>{quantity || "_____"}</span> ground ala{" "}
+        <span>{grindOption || "_____"}</span>, sent to me{" "}
+        <span>{delivery || "_____"}</span>
+        .&quot;
       </p>
     );
   }
