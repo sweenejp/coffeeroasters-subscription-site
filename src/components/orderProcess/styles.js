@@ -4,7 +4,7 @@ export const StyledOrderProcess = styled.section`
   text-align: center;
   background-color: ${({ theme, dark }) =>
     dark ? theme.colors.primary2 : theme.colors.neutral1};
-  border-radius: ${({ theme }) => theme.borderRadius.large};
+  border-radius: ${({ theme }) => theme.borderRadius};
   padding: 5rem 1.5rem;
 
   h2 {

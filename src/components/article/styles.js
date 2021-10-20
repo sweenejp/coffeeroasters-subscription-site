@@ -6,11 +6,11 @@ export const StyledArticle = styled.article`
   align-items: center;
   justify-content: center;
   text-align: center;
-  border-radius: ${({ theme }) => theme.borderRadius.large};
+  border-radius: ${({ theme }) => theme.borderRadius};
   gap: 3rem;
 
   img {
-    border-radius: ${({ theme }) => theme.borderRadius.large};
+    border-radius: ${({ theme }) => theme.borderRadius};
   }
 
   div {

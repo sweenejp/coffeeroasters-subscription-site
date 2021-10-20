@@ -12,7 +12,7 @@ export const StyledWhyChooseUs = styled.section`
     width: 100%;
     height: 925px;
     background-color: ${({ theme }) => theme.colors.primary2};
-    border-radius: ${({ theme }) => theme.borderRadius.large};
+    border-radius: ${({ theme }) => theme.borderRadius};
     top: 0;
     left: 0;
     z-index: -1;
@@ -64,7 +64,7 @@ export const WhyChooseUsCard = styled.div`
   align-items: center;
   justify-content: center;
   background-color: ${({ theme }) => theme.colors.primary1};
-  border-radius: ${({ theme }) => theme.borderRadius.large};
+  border-radius: ${({ theme }) => theme.borderRadius};
   padding: 4.5rem 2.125rem 3.2rem 2.125rem;
   margin: 0 auto 0 auto;
   img {

@@ -8,7 +8,7 @@ export const StyledButton = styled.button`
   ${fontHeavy}
   font-size: 18px;
   border: none;
-  border-radius: ${({ theme }) => theme.borderRadius.large};
+  border-radius: ${({ theme }) => theme.borderRadius};
   cursor: pointer;
   transition: background-color ease-in-out
     ${({ theme }) => theme.transitionLength};

@@ -7,7 +7,7 @@ export const StyledBanner = styled.section`
   text-align: center;
   color: ${({ theme }) => theme.colors.neutral1};
   padding: 6.25rem 0;
-  border-radius: ${({ theme }) => theme.borderRadius.large};
+  border-radius: ${({ theme }) => theme.borderRadius};
 
   div {
     max-width: 280px;

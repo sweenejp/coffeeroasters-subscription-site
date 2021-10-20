@@ -93,7 +93,7 @@ export const FieldsetCard = styled.div`
     display: block;
     flex: 1;
     padding: 1.5rem;
-    border-radius: ${({ theme }) => theme.borderRadius.large};
+    border-radius: ${({ theme }) => theme.borderRadius};
     cursor: pointer;
     background-color: ${({ theme, fieldset, userInput, cardName }) =>
       userInput[fieldset] === cardName
@@ -156,7 +156,7 @@ export const FormProgressItem = styled.h4`
 export const StyledOrderSummary = styled.div`
   background-color: ${({ theme }) => theme.colors.primary2};
   color: ${({ theme }) => theme.colors.neutral1};
-  border-radius: ${({ theme }) => theme.borderRadius.large};
+  border-radius: ${({ theme }) => theme.borderRadius};
   padding: 1.5rem 2rem;
   margin-bottom: 2.5rem;
 
@@ -187,15 +187,15 @@ export const StyledOrderSummaryModal = styled.div`
   background-color: ${({ theme }) => theme.colors.neutral1};
   position: relative;
   z-index: 10;
-  border-radius: ${({ theme }) => theme.borderRadius.large};
+  border-radius: ${({ theme }) => theme.borderRadius};
   position: relative;
 
   h2 {
     ${fontHeavy}
     color: ${({ theme }) => theme.colors.neutral1};
     background-color: ${({ theme }) => theme.colors.primary2};
-    border-top-left-radius: ${({ theme }) => theme.borderRadius.large};
-    border-top-right-radius: ${({ theme }) => theme.borderRadius.large};
+    border-top-left-radius: ${({ theme }) => theme.borderRadius};
+    border-top-right-radius: ${({ theme }) => theme.borderRadius};
     padding: 1.75rem 1.5rem;
   }
 
