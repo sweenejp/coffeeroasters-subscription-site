@@ -10,10 +10,12 @@ export const GlobalStyles = createGlobalStyle`
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   background-color: ${({ theme }) => theme.colors.neutral1};
+  overflow-x: hidden;
 }
 
 h1,h2,h3,h4,h5,h6 {
