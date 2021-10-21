@@ -49,17 +49,6 @@ function OrderForm({ content }) {
   };
 
   useEffect(() => {
-    if (userInput.preference === "Capsule") {
-      setGrindOptionDisabled(true);
-      let newAccordianIndices = accordianIndices.filter((num) => num !== 3);
-      setAccordianIndicies(newAccordianIndices);
-    } else {
-      setGrindOptionDisabled(false);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [userInput.preference]);
-
-  useEffect(() => {
     if (grindOptionDisabled) {
       if (
         userInput.preference &&
