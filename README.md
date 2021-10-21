@@ -1,123 +1,86 @@
-# Frontend Mentor - Coffeeroasters subscription site
+# Frontend Mentor - Coffeeroasters subscription site solution
 
-![Design preview for the Coffeeroasters subscription site coding challenge](./preview.jpg)
+This is a solution to the [Coffeeroasters subscription site challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/coffeeroasters-subscription-site-5Fc26HVY6). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-## Welcome! 👋
+## Table of contents
 
-Thanks for purchasing this premium Frontend Mentor coding challenge.
+- [Frontend Mentor - Coffeeroasters subscription site solution](#frontend-mentor---coffeeroasters-subscription-site-solution)
+  - [Table of contents](#table-of-contents)
+  - [Overview](#overview)
+    - [The challenge](#the-challenge)
+    - [Screenshot](#screenshot)
+    - [Links](#links)
+  - [My process](#my-process)
+    - [Built with](#built-with)
+    - [What I learned](#what-i-learned)
+    - [Continued development](#continued-development)
+    - [Useful resources](#useful-resources)
+  - [Author](#author)
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects. These premium challenges are perfect portfolio pieces, so please feel free to use what you create in your portfolio to show others.
+**Note: Delete this note and update the table of contents based on what sections you keep.**
 
-**To do this challenge, you need a good understanding of HTML, CSS, and JavaScript.**
+## Overview
 
-## The challenge
+### The challenge
 
-Your challenge is to build out this multi-page coffee subscription website and get it looking as close to the design as possible.
-
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
-
-Your users should be able to:
+Users should be able to:
 
 - View the optimal layout for each page depending on their device's screen size
 - See hover states for all interactive elements throughout the site
-- Make selections to create a coffee subscription and see an order summary modal of their choices (details provided below)
+- Make selections to create a coffee subscription and see an order summary modal of their choices
 
-### Expected bahaviour
+### Screenshot
 
-The interactive subscription page has a number of specific behaviours, which are listed below:
+![](./screenshot.png)
 
-- If "Capsule" is selected for the first option
-  - The "Want us to grind them?" section should be disabled and not able to be opened
-- Order summary texts updates
-  - If "Capsule" is selected, update the order summary text to:
-    - "I drink my coffee **using** Capsules"
-    - Remove the grind selection text
-  - If "Filter" or "Espresso" are selected, update the order summary text to:
-    - "I drink my coffee **as** Filter||Espresso"
-    - Keep/Add the grind selection text
-  - For all other selections, add the selection title in the blank space where appropriate
-- Updating per shipment price (shown in "How often should we deliver?" section at the bottom) based on weight selected
-  - If 250g weight is selected
-    - Every Week price per shipment is $7.20
-    - Every 2 Weeks price per shipment is $9.60
-    - Every Month price per shipment is $12.00
-  - If 500g weight is selected
-    - Every Week price per shipment is $13.00
-    - Every 2 Weeks price per shipment is $17.50
-    - Every Month price per shipment is $22.00
-  - If 1000g weight is selected
-    - Every Week price per shipment is $22.00
-    - Every 2 Weeks price per shipment is $32.00
-    - Every Month price per shipment is $42.00
-- Calculating per month cost for the Order Summary modal
-  - If Every Week is selected, the Order Summary modal should show the per shipment price multiplied by 4. For example, if 250g weight is selected, the price would be $28.80/month
-  - If Every 2 Weeks is selected, the Order Summary modal should show the per shipment price multiplied by 2. For example, if 250g weight is selected, the price would be $19.20/month
-  - If Every Month is selected, the Order Summary modal should show the per shipment price multiplied by 1. For example, if 250g weight is selected, the price would be $12.00/month
+### Links
 
-The designs show these differences, so you can refer to them to get an idea of what's needed for the different states.
+- Solution URL: [](https://www.frontendmentor.io/solutions/coffeeroasters-subscription-site-with-react-and-styledcomponents-N_VePArqn)
+- Live Site URL: [](https://jsweeney-coffeeroasters-subscription-site.netlify.app/)
 
-Want some support on the challenge? [Join our Slack community](https://www.frontendmentor.io/slack) and ask questions in the **#help** channel.
+## My process
 
-## Where to find everything
+### Built with
 
-Your task is to build out the project to the design file provided. We provide both Sketch and Figma versions of the design, so you can choose which tool you prefer to use. You can download the design file on the platform. **Please be sure not to share them with anyone else.** The design download comes with a `README.md` file as well to help you get set up.
+- Semantic HTML5 markup
+- Flexbox
+- Mobile-first workflow
+- [React](https://reactjs.org/) - JS library
+- [Styled Components](https://styled-components.com/) - For styles
+- [Reach Accordian](https://reach.tech/accordion/) - for the order form
 
-All the required assets for this project are in the `/assets` folder. The assets are already exported for the correct screen size and optimized. Some images are reusable at multiple screen sizes. So if you don't see an image in a specific folder, it will typically be in another folder for that page.
+### What I learned
 
-The design system in the design file will give you more information about the various colors, fonts, and styles used in this project.
+### Continued development
 
-## Building your project
+I had a few major challenges with completing this project. The first was committing to a style and component organization. I settled on housing components and their child components into the same folder. In that same folder I created a `styles.js` file that housed all of those components' styles. I'm decently happy with the organization but it still felt like a bit of a mess at times. I think I could have created more smaller styled-components to make my styles more readable. That'll be something to work on.
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+The second challenge was considering a way to maintain the state and props of all the components of the order form. I'm a little uncertain with how "readable" my code is. There are probably areas where I could have been passing props more consistently, for example.
 
-1. Separate the `starter-code` from the rest of this project and rename it to something meaningful for you. Initialize the codebase as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/). **⚠️ IMPORTANT ⚠️: There are already a couple of `.gitignore` files in this project. Please do not remove them or change the content of the files. If you create a brand new project, please use the `.gitignore` files provided in your new codebase. This is to avoid the accidental upload of the design files to GitHub. With these premium challenges, please be sure not to share the design files in your GitHub repo. Thanks!**
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+I tried to mimic grabbing data from a content management system by putting content into their own files as objects. I realized that this was pretty much impossible when it came to creating the form, though. I ended up having to hard-cord some of the content into the components themselves.
 
-## Deploying your project
+Finally, I think I need to more fully understand `useEffect`. I ended up having to add this line `// eslint-disable-next-line react-hooks/exhaustive-deps` in order to remove a warning that prevented the site to be built on Netlify.
 
-As mentioned above, there are many ways to host your project for free. Our recommend hosts are:
+```js
+useEffect(() => {
+  if (userInput.preference === "Capsule") {
+    setGrindOptionDisabled(true);
+    let newAccordianIndices = accordianIndices.filter((num) => num !== 3);
+    setAccordianIndicies(newAccordianIndices);
+  } else {
+    setGrindOptionDisabled(false);
+  }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [userInput.preference]);
+```
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+I just want `useEffect` to be called when `userInput.preference` is changed. Without that commented line, React tells me to add `setGrindOptionDisabled` and `setAccordianIndicies` to the dependency array. But if I do that, `setAccordianIndicies` ends up getting rerendered infitely which is definitely what I don't want to happen. For now, I'm happy that this works, but I need to better understand what I'm missing when it comes to `useEffect`.
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
+### Useful resources
 
-## Create a custom `README.md`
+-[react-modal](https://github.com/briancodex/react-modal-v1) I borrowered from this tutorial heavily for displaying the modal. The key is wrapping the modal with a Background styled-component. The Background component fills the entire screen. Other than that, it's only styling is a transparent black to give the illusion that the modal is popping up and everything else is gray-ed out. Then you attach a ref to the Background, if the Background is clicked, the ref matches the event target, and you set the display to false.
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+## Author
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
-
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
-
-## Submitting your solution
-
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
-
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
-
-**⚠️ IMPORTANT ⚠️: With these premium challenges, please be sure not to upload the design files to GitHub when you're submitting to the platform and sharing it around. If you've created a brand new project, the easiest way to do that is to copy across the `.gitignore` provided in this starter project.**
-
-## Sharing your solution
-
-There are multiple places you can share your solution:
-
-1. Share your solution page in the **#finished-projects** channel of the [Slack community](https://www.frontendmentor.io/slack).
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
-
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback.
-
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
-
-## Got feedback for us?
-
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
-
-**Have fun building!** 🚀
+- Website - [Add your name here](https://jimmysweeney.page)
+- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/sweenejp)
