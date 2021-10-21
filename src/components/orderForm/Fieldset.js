@@ -28,13 +28,13 @@ function Fieldset({
   };
 
   const openNextAccordianPanel = (currentIndex) => {
-    let newaccordianIndices = [];
+    let newAccordianIndices = [];
     if (grindOptionDisabled && currentIndex === 2) {
-      newaccordianIndices = [...accordianIndices, currentIndex + 2];
+      newAccordianIndices = [...accordianIndices, currentIndex + 2];
     } else {
-      newaccordianIndices = [...accordianIndices, currentIndex + 1];
+      newAccordianIndices = [...accordianIndices, currentIndex + 1];
     }
-    setAccordianIndicies(newaccordianIndices);
+    setAccordianIndicies([...new Set(newAccordianIndices)]);
   };
 
   const getPricePerShipment = (card) => {
@@ -48,16 +48,6 @@ function Fieldset({
     );
     return pricePerShipment;
   };
-
-  useEffect(() => {
-    if (userInput.preference === "Capsule") {
-      setGrindOptionDisabled(true);
-      let newaccordianIndices = accordianIndices.filter((num) => num !== 3);
-      setAccordianIndicies(newaccordianIndices);
-    } else {
-      setGrindOptionDisabled(false);
-    }
-  }, [userInput]);
 
   const cards = fieldset.cards.map((card) => (
     <FieldsetCard

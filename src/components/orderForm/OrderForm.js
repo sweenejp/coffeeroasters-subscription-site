@@ -49,6 +49,18 @@ function OrderForm({ content }) {
   };
 
   useEffect(() => {
+    if (userInput.preference === "Capsule") {
+      setGrindOptionDisabled(true);
+      let newAccordianIndices = accordianIndices.filter((num) => num !== 3);
+      setAccordianIndicies(newAccordianIndices);
+    } else {
+      setGrindOptionDisabled(false);
+    }
+    console.log(accordianIndices);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [userInput.preference]);
+
+  useEffect(() => {
     if (grindOptionDisabled) {
       if (
         userInput.preference &&
@@ -69,7 +81,7 @@ function OrderForm({ content }) {
         setFormComplete(true);
       }
     }
-  }, [userInput]);
+  }, [userInput, grindOptionDisabled]);
 
   return (
     <Container>
