@@ -33,11 +33,23 @@ export const StyledBanner = styled.section`
       max-width: 400px;
       margin: 0;
     }
+
+    h2 {
+      font-size: 3rem;
+    }
   }
 
   @media screen and (min-width: ${({ theme }) => theme.media.large}) {
     background-image: url(${({ backgroundImages }) =>
       backgroundImages.desktop});
     padding-left: 5.3rem;
+
+    div {
+      max-width: 493px;
+    }
+
+    h2 {
+      font-size: 4.5rem;
+    }
   }
 `;
