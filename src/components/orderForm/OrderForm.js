@@ -56,7 +56,6 @@ function OrderForm({ content }) {
     } else {
       setGrindOptionDisabled(false);
     }
-    console.log(accordianIndices);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userInput.preference]);
 
