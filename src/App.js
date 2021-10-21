@@ -8,6 +8,7 @@ import { sharedContent } from "./content/shared";
 import { homeContent } from "./content/home";
 import { aboutContent } from "./content/about";
 import { orderContent } from "./content/order";
+import Attribution from "./components/attribution/Attribution";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           />
         </Switch>
         <Footer content={sharedContent} />
+        <Attribution />
       </ThemeProvider>
     </Router>
   );
