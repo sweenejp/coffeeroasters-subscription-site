@@ -61,6 +61,8 @@ I tried to mimic grabbing data from a content management system by putting conte
 
 Finally, I think I need to more fully understand `useEffect`. I ended up having to add this line `// eslint-disable-next-line react-hooks/exhaustive-deps` in order to remove a warning that prevented the site to be built on Netlify.
 
+UPDATE: With the help of some discord buddies, I figured out my `useEffect` problem. The logic inside my `useEffect` hook should never have been in `useEffect` but rather on the event handler (`Fieldset`'s `handleChange`). I just needed to make sure I was accessing the new version of `userInput` when checking if the preference was "Capsule".
+
 ```js
 useEffect(() => {
   if (userInput.preference === "Capsule") {
