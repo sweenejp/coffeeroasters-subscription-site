@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { HomePage, AboutPage, OrderPage } from "./pages";
-import { Header, Footer } from "./components";
+import { Header, Footer, Attribution } from "./components";
 import { GlobalStyles } from "./components";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./theme";
@@ -8,7 +8,6 @@ import { sharedContent } from "./content/shared";
 import { homeContent } from "./content/home";
 import { aboutContent } from "./content/about";
 import { orderContent } from "./content/order";
-import Attribution from "./components/attribution/Attribution";
 
 function App() {
   return (
