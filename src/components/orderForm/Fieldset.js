@@ -25,27 +25,20 @@ function Fieldset({
     setUserInput(newUserInput);
 
     const currentIndex = Number(event.target.dataset.fieldsetindex);
-    openNextAccordianPanel(currentIndex);
-
-    // disable and close grindOption if preference is capsule
-    if (newUserInput.preference === "Capsule") {
-      setGrindOptionDisabled(true);
-      let newAccordianIndices = Object.values(accordianIndices).filter(
-        (num) => num !== 3
-      );
-      setAccordianIndicies(newAccordianIndices);
-    } else {
-      setGrindOptionDisabled(false);
-    }
-  };
-
-  const openNextAccordianPanel = (currentIndex) => {
     let newAccordianIndices = [];
     if (grindOptionDisabled && currentIndex === 2) {
       // skip grindOption if it is disabled
       newAccordianIndices = [...accordianIndices, currentIndex + 2];
     } else {
       newAccordianIndices = [...accordianIndices, currentIndex + 1];
+    }
+
+    // disable and close grindOption if preference is capsule
+    if (newUserInput.preference === "Capsule") {
+      setGrindOptionDisabled(true);
+      newAccordianIndices = newAccordianIndices.filter((num) => num !== 3);
+    } else {
+      setGrindOptionDisabled(false);
     }
     setAccordianIndicies([...new Set(newAccordianIndices)]);
   };
