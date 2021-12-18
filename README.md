@@ -35,8 +35,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [](https://www.frontendmentor.io/solutions/coffeeroasters-subscription-site-with-react-and-styledcomponents-N_VePArqn)
-- Live Site URL: [](https://jsweeney-coffeeroasters-subscription-site.netlify.app/)
+- Solution URL: [https://www.frontendmentor.io/solutions/coffeeroasters-subscription-site-with-react-and-styledcomponents-N_VePArqn](https://www.frontendmentor.io/solutions/coffeeroasters-subscription-site-with-react-and-styledcomponents-N_VePArqn)
+- Live Site URL: [https://jsweeney-coffeeroasters-subscription-site.netlify.app/](https://jsweeney-coffeeroasters-subscription-site.netlify.app/)
 
 ## My process
 
